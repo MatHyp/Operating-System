@@ -1,6 +1,10 @@
+#include "gdt.h"
+
 void kernel_main(void) {
+    gdt_install();
+
     volatile char *video_memory = (volatile char*)0xB8000;
-    
+
     const char *message = "Witaj w naszym wlasnym OS!";
     
     int i = 0; 
@@ -13,4 +17,5 @@ void kernel_main(void) {
         j++;
         i += 2; // Pamięć wideo używa 2 bajtów na jeden znak na ekranie
     }
+
 }

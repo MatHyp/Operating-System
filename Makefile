@@ -19,7 +19,11 @@ KERNEL_BIN = $(BUILD_DIR)/myos.bin
 OS_ISO = $(BUILD_DIR)/myos.iso
 
 # Pliki obiektowe lądują w folderze build
-OBJS = $(BUILD_DIR)/boot.o $(BUILD_DIR)/kernel.o
+OBJS = \
+	$(BUILD_DIR)/boot.o \
+	$(BUILD_DIR)/kernel.o \
+	$(BUILD_DIR)/gdt.o \
+	$(BUILD_DIR)/gdt_asm.o
 
 # Domyślny cel
 all: run
